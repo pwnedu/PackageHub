@@ -1,0 +1,23 @@
+{
+  "name": "com.kiltec.pwneduhub",
+  "version": "0.0.11",
+  "displayName": "Pwnedu Hub by pwnedu",
+  "description": "Productivity tools for everyone",
+  "unity": "2018.1",
+  "documentationUrl": "https://github.com/pwnedu/PwneduHub/wiki",
+  "licensesUrl": "https://github.com/pwnedu/PwneduHub/blob/main/LICENSE",
+  "keywords": [
+    "unity",
+    "tools",
+    "editor",
+    "attributes",
+    "productivity",
+    "pwnedu",
+    "kiltec"
+  ],
+  "author": {
+    "name": "Kiltec",
+    "url": "https://github.com/pwnedu"
+  },
+  "type": "tool"
+}
