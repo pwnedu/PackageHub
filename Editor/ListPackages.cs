@@ -1,6 +1,7 @@
-using UnityEditor;
+using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
 using UnityEditor.PackageManager;
+using UnityEditor;
 using UnityEngine;
 
 namespace pwnedu.hub
@@ -9,11 +10,12 @@ namespace pwnedu.hub
     {
         private static ListRequest Request;
 
-        [MenuItem("Tools/Custom Tools/Packages/List Installed Packages", priority = 100)]
+        private static readonly List<string> packageList = new List<string>();
+
+        [InitializeOnLoadMethod] [MenuItem("Tools/Custom Tools/Packages/List Installed Packages", priority = 100)]
         public static void List()
         {
-            // List packages installed for the project
-            Request = Client.List();    
+            Request = Client.List();
             EditorApplication.update += Progress;
         }
 
@@ -23,18 +25,18 @@ namespace pwnedu.hub
             {
                 if (Request.Status == StatusCode.Success)
                 {
+                    packageList.Clear();
+
                     foreach (var package in Request.Result)
                     {
                         if (package.name.Contains("kiltec"))
                         {
-                            Debug.Log($"Package Name: {package.displayName} {package.name}");
+                            packageList.Add(package.name);
+                            //Debug.Log($"Package Name: {package.displayName} {package.name}");
                         }
-
-                        //if (package.displayName.Contains("pwnedu"))
-                        //{
-                        //    Debug.Log($"Package Name: {package.displayName} {package.name}");
-                        //}
                     }
+
+                    //Debug.Log("Package List Updated!");
                 }
                 else if (Request.Status >= StatusCode.Failure)
                 {
@@ -43,6 +45,16 @@ namespace pwnedu.hub
 
                 EditorApplication.update -= Progress;
             }
+        }
+
+        public static List<string> InstalledPackageList()
+        {
+            return packageList;
+        }
+
+        public static bool IsPackageInstalled(string package)
+        {
+            return packageList.Contains(package);
         }
     }
 }

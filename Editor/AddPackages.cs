@@ -54,37 +54,152 @@ namespace pwnedu.hub
         //    EditorApplication.update += Progress;
         //}
 
-        [MenuItem(installItem + "Add Setup Tools Package")]
+        //******************* [ Install Package With Validation ] *******************//
+
+        #region ProjectSetup
+
+        [MenuItem(installItem + Packages.setupToolName)]
         static void AddSetupTools()
         {
-            // Add a package to the project
-            Request = Client.Add("https://github.com/pwnedu/SetupTools.git");
-            EditorApplication.update += Progress;
+            if (EditorUtility.DisplayDialog($"Add {Packages.setupToolName}", $"This will install {Packages.setupToolName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/SetupTools.git");
+                EditorApplication.update += Progress;
+            }
         }
 
-        [MenuItem(installItem + "Add Custom Attributes Package")]
+        [MenuItem(installItem + Packages.setupToolName, validate = true)]
+        static bool AddSetupToolsValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.setupToolPackage))
+            {
+                Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
+        #region CustomAttributes
+
+        [MenuItem(installItem + Packages.customAttributesName)]
         static void AddCustomAttributes()
         {
-            // Add a package to the project
-            Request = Client.Add("https://github.com/pwnedu/CustomAttributes.git");
-            EditorApplication.update += Progress;
+            if (EditorUtility.DisplayDialog($"Add {Packages.customAttributesName}", $"This will install {Packages.customAttributesName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/CustomAttributes.git");
+                EditorApplication.update += Progress;
+            }
         }
 
-        [MenuItem(installItem + "Add My Notes Package")]
+        [MenuItem(installItem + Packages.customAttributesName, validate = true)]
+        static bool AddCustomAttributesValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.customAttributesPackage))
+            {
+                Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
+        #region MyNotes
+
+        [MenuItem(installItem + Packages.myNotesName)]
         static void AddMyNotes()
         {
-            // Add a package to the project
-            Request = Client.Add("https://github.com/pwnedu/MyNotes.git");
-            EditorApplication.update += Progress;
+            if (EditorUtility.DisplayDialog($"Add {Packages.myNotesName}", $"This will install {Packages.myNotesName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/MyNotes.git");
+                EditorApplication.update += Progress;
+            }
         }
 
-        [MenuItem(installItem + "Add Unity Tools Package")]
+        [MenuItem(installItem + Packages.myNotesName, validate = true)]
+        static bool AddMyNotesValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.myNotesPackage))
+            {
+                Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
+        #region ProjectCustomisation
+
+        //[MenuItem(installItem + Packages.projectCustomisationName)]
+        //static void AddProjectCustomisation()
+        //{
+        //    if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"This will install {Packages.projectCustomisationName} for your project.\nAre you sure?", "Continue", "Cancel"))
+        //    {
+        //        // Add a package to the project
+        //        Request = Client.Add("https://github.com/pwnedu/ProjectCustomisation.git");
+        //        EditorApplication.update += Progress;
+        //    }
+        //}
+        //
+        //[MenuItem(installItem + Packages.projectCustomisationName, validate = true)]
+        //static bool AddProjectCustomisationValidate()
+        //{
+        //    if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
+        //    {
+        //        Debug.Log($"{Packages.setupToolName} not installed!");
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
+
+        #endregion
+
+        #region UnityTools
+
+        [MenuItem(installItem + Packages.unityToolsName)]
         static void AddUnityTools()
         {
-            // Add a package to the project
-            Request = Client.Add("https://github.com/pwnedu/UnityTools.git");
-            EditorApplication.update += Progress;
+            if (EditorUtility.DisplayDialog($"Add {Packages.unityToolsName}", $"This will install {Packages.unityToolsName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/UnityTools.git");
+                EditorApplication.update += Progress;
+            }
         }
+
+        [MenuItem(installItem + Packages.unityToolsName, validate = true)]
+        static bool AddUnityToolsValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.unityToolsPackage))
+            {
+                Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
 
         //******************* [ Report Progress ] *******************//
 
