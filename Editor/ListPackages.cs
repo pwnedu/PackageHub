@@ -7,9 +7,9 @@ namespace pwnedu.hub
 {
     static class ListPackages
     {
-        static ListRequest Request;
+        private static ListRequest Request;
 
-        [MenuItem("Tools/Custom Tools/Packages/List Installed Packages")]
+        [MenuItem("Tools/Custom Tools/Packages/List Installed Packages", priority = 100)]
         public static void List()
         {
             // List packages installed for the project
@@ -17,7 +17,7 @@ namespace pwnedu.hub
             EditorApplication.update += Progress;
         }
 
-        static void Progress()
+        private static void Progress()
         {
             if (Request.IsCompleted)
             {
