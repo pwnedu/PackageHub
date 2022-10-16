@@ -10,7 +10,7 @@ namespace pwnedu.hub
         static ListRequest Request;
 
         [MenuItem("Tools/Custom Tools/Packages/List Installed Packages")]
-        static void List()
+        public static void List()
         {
             // List packages installed for the project
             Request = Client.List();    
