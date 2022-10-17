@@ -122,30 +122,30 @@ namespace pwnedu.hub
 
         #region ProjectCustomisation
 
-        //[MenuItem(removeItem + Packages.projectCustomisationName)]
-        //static void RemoveProjectCustomiser()
-        //{
-        //    if (EditorUtility.DisplayDialog($"Remove {Packages.projectCustomisationName}", $"This will remove {Packages.projectCustomisationName} from your project.\nAre you sure?", "Confirm", "Cancel"))
-        //    {
-        //        // Remove a package to the project
-        //        Client.Remove(Packages.projectCustomisationPackage);
-        //        Debug.Log($"{Packages.projectCustomisationName} package removed!");
-        //    }
-        //}
-        //
-        //[MenuItem(removeItem + Packages.projectCustomisationName, validate = true)]
-        //static bool RemoveProjectCustomiserValidate()
-        //{
-        //    if (!ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
-        //    {
-        //        //Debug.Log($"{Packages.projectCustomisationName} not installed!");
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
+        [MenuItem(removeItem + Packages.projectCustomisationName)]
+        static void RemoveProjectCustomiser()
+        {
+            if (EditorUtility.DisplayDialog($"Remove {Packages.projectCustomisationName}", $"This will remove {Packages.projectCustomisationName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            {
+                // Remove a package to the project
+                Client.Remove(Packages.projectCustomisationPackage);
+                Debug.Log($"{Packages.projectCustomisationName} package removed!");
+            }
+        }
+        
+        [MenuItem(removeItem + Packages.projectCustomisationName, validate = true)]
+        static bool RemoveProjectCustomiserValidate()
+        {
+            if (!ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
+            {
+                //Debug.Log($"{Packages.projectCustomisationName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         #endregion
 

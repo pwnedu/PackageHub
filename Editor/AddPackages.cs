@@ -145,30 +145,30 @@ namespace pwnedu.hub
 
         #region ProjectCustomisation
 
-        //[MenuItem(installItem + Packages.projectCustomisationName)]
-        //static void AddProjectCustomisation()
-        //{
-        //    if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"This will install {Packages.projectCustomisationName} for your project.\nAre you sure?", "Continue", "Cancel"))
-        //    {
-        //        // Add a package to the project
-        //        Request = Client.Add("https://github.com/pwnedu/ProjectCustomisation.git");
-        //        EditorApplication.update += Progress;
-        //    }
-        //}
-        //
-        //[MenuItem(installItem + Packages.projectCustomisationName, validate = true)]
-        //static bool AddProjectCustomisationValidate()
-        //{
-        //    if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
-        //    {
-        //        //Debug.Log($"{Packages.setupToolName} not installed!");
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
+        [MenuItem(installItem + Packages.projectCustomisationName)]
+        static void AddProjectCustomisation()
+        {
+            if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"This will install {Packages.projectCustomisationName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/ProjectCustomisation.git");
+                EditorApplication.update += Progress;
+            }
+        }
+        
+        [MenuItem(installItem + Packages.projectCustomisationName, validate = true)]
+        static bool AddProjectCustomisationValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
+            {
+                //Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         #endregion
 
