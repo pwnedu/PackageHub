@@ -1,5 +1,5 @@
 {
-    "name": "PackageHub",
+    "name": "Kiltec.PackageHub.Editor",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [
