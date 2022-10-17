@@ -151,30 +151,30 @@ namespace pwnedu.hub
 
         #region UnityTools
 
-        [MenuItem(removeItem + Packages.unityToolsName)]
-        static void RemoveUnityTools()
-        {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.unityToolsName}", $"This will remove {Packages.unityToolsName} from your project.\nAre you sure?", "Confirm", "Cancel"))
-            {
-                // Remove a package to the project
-                Client.Remove(Packages.unityToolsPackage);
-                Debug.Log($"{Packages.unityToolsName} package removed!");
-            }
-        }
-
-        [MenuItem(removeItem + Packages.unityToolsName, validate = true)]
-        static bool RemoveUnityToolsValidate()
-        {
-            if (!ListPackages.IsPackageInstalled(Packages.unityToolsPackage)) 
-            {
-                //Debug.Log($"{Packages.unityToolsName} not installed!");
-                return false; 
-            }
-            else
-            {
-                return true;
-            }
-        }
+        //[MenuItem(removeItem + Packages.unityToolsName)]
+        //static void RemoveUnityTools()
+        //{
+        //    if (EditorUtility.DisplayDialog($"Remove {Packages.unityToolsName}", $"This will remove {Packages.unityToolsName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+        //    {
+        //        // Remove a package to the project
+        //        Client.Remove(Packages.unityToolsPackage);
+        //        Debug.Log($"{Packages.unityToolsName} package removed!");
+        //    }
+        //}
+        //
+        //[MenuItem(removeItem + Packages.unityToolsName, validate = true)]
+        //static bool RemoveUnityToolsValidate()
+        //{
+        //    if (!ListPackages.IsPackageInstalled(Packages.unityToolsPackage)) 
+        //    {
+        //        //Debug.Log($"{Packages.unityToolsName} not installed!");
+        //        return false; 
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
 
         #endregion
     }
