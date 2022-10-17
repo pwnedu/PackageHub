@@ -74,7 +74,7 @@ namespace pwnedu.hub
         {
             if (ListPackages.IsPackageInstalled(Packages.setupToolPackage))
             {
-                Debug.Log($"{Packages.setupToolName} not installed!");
+                //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
             }
             else
@@ -103,7 +103,7 @@ namespace pwnedu.hub
         {
             if (ListPackages.IsPackageInstalled(Packages.customAttributesPackage))
             {
-                Debug.Log($"{Packages.setupToolName} not installed!");
+                //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
             }
             else
@@ -132,7 +132,7 @@ namespace pwnedu.hub
         {
             if (ListPackages.IsPackageInstalled(Packages.myNotesPackage))
             {
-                Debug.Log($"{Packages.setupToolName} not installed!");
+                //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
             }
             else
@@ -161,7 +161,7 @@ namespace pwnedu.hub
         //{
         //    if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
         //    {
-        //        Debug.Log($"{Packages.setupToolName} not installed!");
+        //        //Debug.Log($"{Packages.setupToolName} not installed!");
         //        return false;
         //    }
         //    else
@@ -190,7 +190,7 @@ namespace pwnedu.hub
         {
             if (ListPackages.IsPackageInstalled(Packages.unityToolsPackage))
             {
-                Debug.Log($"{Packages.setupToolName} not installed!");
+                //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
             }
             else
