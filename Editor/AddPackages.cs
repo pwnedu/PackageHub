@@ -143,7 +143,7 @@ namespace pwnedu.hub
 
         #endregion
 
-        #region ProjectCustomisation
+        #region ProjectCustomiser
 
         [MenuItem(installItem + Packages.projectCustomisationName)]
         static void AddProjectCustomisation()
@@ -174,30 +174,30 @@ namespace pwnedu.hub
 
         #region UnityTools
 
-        [MenuItem(installItem + Packages.unityToolsName)]
-        static void AddUnityTools()
-        {
-            if (EditorUtility.DisplayDialog($"Add {Packages.unityToolsName}", $"This will install {Packages.unityToolsName} for your project.\nAre you sure?", "Continue", "Cancel"))
-            {
-                // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/UnityTools.git");
-                EditorApplication.update += Progress;
-            }
-        }
-
-        [MenuItem(installItem + Packages.unityToolsName, validate = true)]
-        static bool AddUnityToolsValidate()
-        {
-            if (ListPackages.IsPackageInstalled(Packages.unityToolsPackage))
-            {
-                //Debug.Log($"{Packages.setupToolName} not installed!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        //[MenuItem(installItem + Packages.unityToolsName)]
+        //static void AddUnityTools()
+        //{
+        //    if (EditorUtility.DisplayDialog($"Add {Packages.unityToolsName}", $"This will install {Packages.unityToolsName} for your project.\nAre you sure?", "Continue", "Cancel"))
+        //    {
+        //        // Add a package to the project
+        //        Request = Client.Add("https://github.com/pwnedu/UnityTools.git");
+        //        EditorApplication.update += Progress;
+        //    }
+        //}
+        //
+        //[MenuItem(installItem + Packages.unityToolsName, validate = true)]
+        //static bool AddUnityToolsValidate()
+        //{
+        //    if (ListPackages.IsPackageInstalled(Packages.unityToolsPackage))
+        //    {
+        //        //Debug.Log($"{Packages.setupToolName} not installed!");
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
 
         #endregion
 
