@@ -56,7 +56,7 @@ namespace pwnedu.hub
         static void RegisteredPackagesEventHandler(PackageRegistrationEventArgs packageRegistrationEventArgs)
         {
             // Code executed here can safely assume that the Editor has finished compiling the new list of packages
-            Debug.Log("The list of registered packages has changed!");
+            //Debug.Log("The list of registered packages has changed!");
             ListPackages.List();
         }
     }

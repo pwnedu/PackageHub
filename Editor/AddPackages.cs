@@ -11,7 +11,7 @@ namespace pwnedu.hub
 
         static AddRequest Request;
 
-        //******************* [ Install Packages ] *******************//
+        //******************* [ Install Local Packages ] *******************//
 
         //[MenuItem(installItem + "Add Text Mesh Pro")]
         //static void AddTextMeshPro()
@@ -54,7 +54,7 @@ namespace pwnedu.hub
         //    EditorApplication.update += Progress;
         //}
 
-        //******************* [ Install Package With Validation ] *******************//
+        //******************* [ Install Package via git With Validation ] *******************//
 
         #region ProjectSetup
 
