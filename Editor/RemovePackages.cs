@@ -120,6 +120,35 @@ namespace pwnedu.hub
 
         #endregion
 
+        #region Script Editor
+
+        [MenuItem(removeItem + Packages.scriptEditorName)]
+        static void RemoveScriptEditor()
+        {
+            if (EditorUtility.DisplayDialog($"Remove {Packages.scriptEditorName}", $"This will remove {Packages.scriptEditorName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            {
+                // Remove a package to the project
+                Client.Remove(Packages.scriptEditorPackage);
+                Debug.Log($"{Packages.scriptEditorName} package removed!");
+            }
+        }
+
+        [MenuItem(removeItem + Packages.scriptEditorName, validate = true)]
+        static bool RemoveScriptEditorValidate()
+        {
+            if (!ListPackages.IsPackageInstalled(Packages.scriptEditorPackage))
+            {
+                //Debug.Log($"{Packages.myNotesName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
         #region ProjectCustomisation
 
         [MenuItem(removeItem + Packages.projectCustomisationName)]
