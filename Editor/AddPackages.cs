@@ -143,6 +143,35 @@ namespace pwnedu.hub
 
         #endregion
 
+        #region Script Editor
+
+        [MenuItem(installItem + Packages.scriptEditorName)]
+        static void AddScriptEditor()
+        {
+            if (EditorUtility.DisplayDialog($"Add {Packages.scriptEditorName}", $"This will install {Packages.scriptEditorName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add("https://github.com/pwnedu/ScriptEditor.git");
+                EditorApplication.update += Progress;
+            }
+        }
+
+        [MenuItem(installItem + Packages.scriptEditorName, validate = true)]
+        static bool AdScriptEditorValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.scriptEditorPackage))
+            {
+                //Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
         #region ProjectCustomiser
 
         [MenuItem(installItem + Packages.projectCustomisationName)]
