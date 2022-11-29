@@ -7,61 +7,20 @@ namespace pwnedu.hub
 {
     static class AddPackages
     {
-        const string installItem = "Tools/Custom Tools/Packages/Install/";
+        const string _installMenu = "Tools/Custom Tools/Packages/Install/";
+        const string _installText = "This will add";
+        const string _forText = "for use in your project.\n\nProceed with install?";
 
         static AddRequest Request;
-
-        //******************* [ Install Local Packages ] *******************//
-
-        //[MenuItem(installItem + "Add Text Mesh Pro")]
-        //static void AddTextMeshPro()
-        //{
-        //    // Add a package to the project
-        //    Request = Client.Add("com.unity.textmeshpro");
-        //
-        //    EditorApplication.update += Progress;
-        //}
-        //
-        //[MenuItem(installItem + "Add TMP Font Tool")]
-        //static void AddFontTool()
-        //{
-        //    // Add a package to the project
-        //    Request = Client.Add("https://github.com/pwnedu/TMPFontTool.git");
-        //    //Request = Client.Add("file://C:/Users/kiltec/OneDrive/Documents/GitHub/TMPFontTool/package.json");
-        //    //Request = Client.Add("com.kiltec.fonttool");
-        //    EditorApplication.update += Progress;
-        //}
-        //
-        //[MenuItem(installItem + "Add Colour Palettes")]
-        //static void AddColourPalettes()
-        //{
-        //    // Add a package to the project
-        //    Request = Client.Add("https://github.com/pwnedu/ColourPalettes.git");
-        //    //Request = Client.Add("file://C:/Users/kiltec/OneDrive/Documents/GitHub/ColourPalettes/package.json");
-        //    //Request = Client.Add("com.kiltec.colourpalettes");
-        //
-        //    EditorApplication.update += Progress;
-        //}
-        //
-        //[MenuItem(installItem + "Add Procedural Image Tools")]
-        //static void AddProceduralImages()
-        //{
-        //    // Add a package to the project
-        //    Request = Client.Add("https://github.com/pwnedu/ProceduralImages.git");
-        //    //Request = Client.Add("file://C:/Users/kiltec/OneDrive/Documents/GitHub/ProceduralImageTools/package.json");
-        //    //Request = Client.Add("com.kiltec.proceduralimages");
-        //
-        //    EditorApplication.update += Progress;
-        //}
 
         //******************* [ Install Package via git With Validation ] *******************//
 
         #region ProjectSetup
 
-        [MenuItem(installItem + Packages.setupToolName)]
+        [MenuItem(_installMenu + Packages.setupToolName)]
         static void AddSetupTools()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.setupToolName}", $"This will install {Packages.setupToolName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.setupToolName}", $"{_installText} {Packages.setupToolName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
                 Request = Client.Add("https://github.com/pwnedu/SetupTools.git");
@@ -69,7 +28,7 @@ namespace pwnedu.hub
             }
         }
 
-        [MenuItem(installItem + Packages.setupToolName, validate = true)]
+        [MenuItem(_installMenu + Packages.setupToolName, validate = true)]
         static bool AddSetupToolsValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.setupToolPackage))
@@ -87,10 +46,10 @@ namespace pwnedu.hub
 
         #region CustomAttributes
 
-        [MenuItem(installItem + Packages.customAttributesName)]
+        [MenuItem(_installMenu + Packages.customAttributesName)]
         static void AddCustomAttributes()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.customAttributesName}", $"This will install {Packages.customAttributesName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.customAttributesName}", $"{_installText} {Packages.customAttributesName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
                 Request = Client.Add("https://github.com/pwnedu/CustomAttributes.git");
@@ -98,7 +57,7 @@ namespace pwnedu.hub
             }
         }
 
-        [MenuItem(installItem + Packages.customAttributesName, validate = true)]
+        [MenuItem(_installMenu + Packages.customAttributesName, validate = true)]
         static bool AddCustomAttributesValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.customAttributesPackage))
@@ -116,10 +75,10 @@ namespace pwnedu.hub
 
         #region MyNotes
 
-        [MenuItem(installItem + Packages.myNotesName)]
+        [MenuItem(_installMenu + Packages.myNotesName)]
         static void AddMyNotes()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.myNotesName}", $"This will install {Packages.myNotesName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.myNotesName}", $"{_installText} {Packages.myNotesName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
                 Request = Client.Add("https://github.com/pwnedu/MyNotes.git");
@@ -127,7 +86,7 @@ namespace pwnedu.hub
             }
         }
 
-        [MenuItem(installItem + Packages.myNotesName, validate = true)]
+        [MenuItem(_installMenu + Packages.myNotesName, validate = true)]
         static bool AddMyNotesValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.myNotesPackage))
@@ -145,10 +104,10 @@ namespace pwnedu.hub
 
         #region Script Editor
 
-        [MenuItem(installItem + Packages.scriptEditorName)]
+        [MenuItem(_installMenu + Packages.scriptEditorName)]
         static void AddScriptEditor()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.scriptEditorName}", $"This will install {Packages.scriptEditorName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.scriptEditorName}", $"{_installText} {Packages.scriptEditorName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
                 Request = Client.Add("https://github.com/pwnedu/ScriptEditor.git");
@@ -156,7 +115,7 @@ namespace pwnedu.hub
             }
         }
 
-        [MenuItem(installItem + Packages.scriptEditorName, validate = true)]
+        [MenuItem(_installMenu + Packages.scriptEditorName, validate = true)]
         static bool AdScriptEditorValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.scriptEditorPackage))
@@ -174,10 +133,10 @@ namespace pwnedu.hub
 
         #region ProjectCustomiser
 
-        [MenuItem(installItem + Packages.projectCustomisationName)]
+        [MenuItem(_installMenu + Packages.projectCustomisationName)]
         static void AddProjectCustomisation()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"This will install {Packages.projectCustomisationName} for your project.\nAre you sure?", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"{_installText} {Packages.projectCustomisationName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
                 Request = Client.Add("https://github.com/pwnedu/ProjectCustomisation.git");
@@ -185,7 +144,7 @@ namespace pwnedu.hub
             }
         }
         
-        [MenuItem(installItem + Packages.projectCustomisationName, validate = true)]
+        [MenuItem(_installMenu + Packages.projectCustomisationName, validate = true)]
         static bool AddProjectCustomisationValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
@@ -198,35 +157,6 @@ namespace pwnedu.hub
                 return true;
             }
         }
-
-        #endregion
-
-        #region UnityTools
-
-        //[MenuItem(installItem + Packages.unityToolsName)]
-        //static void AddUnityTools()
-        //{
-        //    if (EditorUtility.DisplayDialog($"Add {Packages.unityToolsName}", $"This will install {Packages.unityToolsName} for your project.\nAre you sure?", "Continue", "Cancel"))
-        //    {
-        //        // Add a package to the project
-        //        Request = Client.Add("https://github.com/pwnedu/UnityTools.git");
-        //        EditorApplication.update += Progress;
-        //    }
-        //}
-        //
-        //[MenuItem(installItem + Packages.unityToolsName, validate = true)]
-        //static bool AddUnityToolsValidate()
-        //{
-        //    if (ListPackages.IsPackageInstalled(Packages.unityToolsPackage))
-        //    {
-        //        //Debug.Log($"{Packages.setupToolName} not installed!");
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
 
         #endregion
 
