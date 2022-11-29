@@ -12,7 +12,7 @@ namespace pwnedu.hub
 
         private static readonly List<string> packageList = new List<string>();
 
-        [InitializeOnLoadMethod] [MenuItem("Tools/Custom Tools/Packages/List Installed Packages", priority = 100)]
+        [InitializeOnLoadMethod] //[MenuItem("Tools/Custom Tools/Packages/List Installed Packages", priority = 100)]
         public static void List()
         {
             Request = Client.List();
