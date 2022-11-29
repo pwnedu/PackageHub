@@ -6,47 +6,27 @@ namespace pwnedu.hub
 {
     static class RemovePackages
     {
-        const string removeItem = "Tools/Custom Tools/Packages/Uninstall/";
-
-        //******************* [ Uninstall Packages ] *******************//
-
-        //[MenuItem(removeItem + "Remove Colour Palettes")]
-        //static void RemoveColourPalettes()
-        //{
-        //    // Remove a package to the project
-        //    Client.Remove("com.kiltec.colourpalettes");
-        //}
-
-        //[MenuItem(removeItem + "Remove TMP Font Tool")]
-        //static void RemoveFontTool()
-        //{
-        //    // Remove a package to the project
-        //    Client.Remove("com.kiltec.fonttool");
-        //}
-
-        //[MenuItem(removeItem + "Remove Procedural Images")]
-        //static void RemoveProceduralImageTool()
-        //{
-        //    // Remove a package to the project
-        //    Client.Remove("com.kiltec.proceduralimages");
-        //}
+        const string _removeMenu = "Tools/Custom Tools/Packages/Uninstall/";
+        const string _removeText = "This will remove";
+        const string _fromText = "from your project.\n\nAre you sure?";
+        const string _confirmationText = "package removed!";
 
         //******************* [ Uninstall Package With Validation ] *******************//
 
         #region ProjectSetup
 
-        [MenuItem(removeItem + Packages.setupToolName)]
+        [MenuItem(_removeMenu + Packages.setupToolName)]
         static void RemoveSetupTools()
         {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.setupToolName}", $"This will remove {Packages.setupToolName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Remove {Packages.setupToolName}", $"{_removeText} {Packages.setupToolName} {_fromText}", "Confirm", "Cancel"))
             {
                 // Remove a package to the project
                 Client.Remove(Packages.setupToolPackage);
-                Debug.Log($"{Packages.setupToolName} package removed!");
+                Debug.Log($"{Packages.setupToolName} {_confirmationText}");
             }
         }
 
-        [MenuItem(removeItem + Packages.setupToolName, validate = true)]
+        [MenuItem(_removeMenu + Packages.setupToolName, validate = true)]
         static bool RemoveSetupToolsValidate()
         {
             if (!ListPackages.IsPackageInstalled(Packages.setupToolPackage))
@@ -64,18 +44,18 @@ namespace pwnedu.hub
 
         #region CustomAttributes
 
-        [MenuItem(removeItem + Packages.customAttributesName)]
+        [MenuItem(_removeMenu + Packages.customAttributesName)]
         static void RemoveCustomAttributes()
         {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.customAttributesName}", $"This will remove {Packages.customAttributesName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Remove {Packages.customAttributesName}", $"{_removeText} {Packages.customAttributesName} {_fromText}", "Confirm", "Cancel"))
             {
                 // Remove a package to the project
                 Client.Remove(Packages.customAttributesPackage);
-                Debug.Log($"{Packages.customAttributesName} package removed!");
+                Debug.Log($"{Packages.customAttributesName} {_confirmationText}");
             }
         }
 
-        [MenuItem(removeItem + Packages.customAttributesName, validate = true)]
+        [MenuItem(_removeMenu + Packages.customAttributesName, validate = true)]
         static bool RemoveCustomAttributesValidate()
         {
             if (!ListPackages.IsPackageInstalled(Packages.customAttributesPackage))
@@ -93,18 +73,18 @@ namespace pwnedu.hub
 
         #region MyNotes
 
-        [MenuItem(removeItem + Packages.myNotesName)]
+        [MenuItem(_removeMenu + Packages.myNotesName)]
         static void RemoveMyNotes()
         {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.myNotesName}", $"This will remove {Packages.myNotesName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Remove {Packages.myNotesName}", $"{_removeText} {Packages.myNotesName} {_fromText}", "Confirm", "Cancel"))
             {
                 // Remove a package to the project
                 Client.Remove(Packages.myNotesPackage);
-                Debug.Log($"{Packages.myNotesName} package removed!");
+                Debug.Log($"{Packages.myNotesName} {_confirmationText}");
             }
         }
 
-        [MenuItem(removeItem + Packages.myNotesName, validate = true)]
+        [MenuItem(_removeMenu + Packages.myNotesName, validate = true)]
         static bool RemoveMyNotesValidate()
         {
             if (!ListPackages.IsPackageInstalled(Packages.myNotesPackage)) 
@@ -122,18 +102,18 @@ namespace pwnedu.hub
 
         #region Script Editor
 
-        [MenuItem(removeItem + Packages.scriptEditorName)]
+        [MenuItem(_removeMenu + Packages.scriptEditorName)]
         static void RemoveScriptEditor()
         {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.scriptEditorName}", $"This will remove {Packages.scriptEditorName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Remove {Packages.scriptEditorName}", $"{_removeText} {Packages.scriptEditorName} {_fromText}", "Confirm", "Cancel"))
             {
                 // Remove a package to the project
                 Client.Remove(Packages.scriptEditorPackage);
-                Debug.Log($"{Packages.scriptEditorName} package removed!");
+                Debug.Log($"{Packages.scriptEditorName} {_confirmationText}");
             }
         }
 
-        [MenuItem(removeItem + Packages.scriptEditorName, validate = true)]
+        [MenuItem(_removeMenu + Packages.scriptEditorName, validate = true)]
         static bool RemoveScriptEditorValidate()
         {
             if (!ListPackages.IsPackageInstalled(Packages.scriptEditorPackage))
@@ -151,18 +131,18 @@ namespace pwnedu.hub
 
         #region ProjectCustomisation
 
-        [MenuItem(removeItem + Packages.projectCustomisationName)]
+        [MenuItem(_removeMenu + Packages.projectCustomisationName)]
         static void RemoveProjectCustomiser()
         {
-            if (EditorUtility.DisplayDialog($"Remove {Packages.projectCustomisationName}", $"This will remove {Packages.projectCustomisationName} from your project.\nAre you sure?", "Confirm", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Remove {Packages.projectCustomisationName}", $"{_removeText} {Packages.projectCustomisationName} {_fromText}", "Confirm", "Cancel"))
             {
                 // Remove a package to the project
                 Client.Remove(Packages.projectCustomisationPackage);
-                Debug.Log($"{Packages.projectCustomisationName} package removed!");
+                Debug.Log($"{Packages.projectCustomisationName} {_confirmationText}");
             }
         }
         
-        [MenuItem(removeItem + Packages.projectCustomisationName, validate = true)]
+        [MenuItem(_removeMenu + Packages.projectCustomisationName, validate = true)]
         static bool RemoveProjectCustomiserValidate()
         {
             if (!ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
@@ -175,35 +155,6 @@ namespace pwnedu.hub
                 return true;
             }
         }
-
-        #endregion
-
-        #region UnityTools
-
-        //[MenuItem(removeItem + Packages.unityToolsName)]
-        //static void RemoveUnityTools()
-        //{
-        //    if (EditorUtility.DisplayDialog($"Remove {Packages.unityToolsName}", $"This will remove {Packages.unityToolsName} from your project.\nAre you sure?", "Confirm", "Cancel"))
-        //    {
-        //        // Remove a package to the project
-        //        Client.Remove(Packages.unityToolsPackage);
-        //        Debug.Log($"{Packages.unityToolsName} package removed!");
-        //    }
-        //}
-        //
-        //[MenuItem(removeItem + Packages.unityToolsName, validate = true)]
-        //static bool RemoveUnityToolsValidate()
-        //{
-        //    if (!ListPackages.IsPackageInstalled(Packages.unityToolsPackage)) 
-        //    {
-        //        //Debug.Log($"{Packages.unityToolsName} not installed!");
-        //        return false; 
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
 
         #endregion
     }
