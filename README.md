@@ -2,7 +2,7 @@
 
 ## A Package Manager for Kiltec's Unity Tools
 
-### This installer will give access to the following packages:
+### This will give access to manage the following packages:
 
 1. Project Setup (Setup folders and templates) 
 2. CustomAttributes (Custom Inspector)
