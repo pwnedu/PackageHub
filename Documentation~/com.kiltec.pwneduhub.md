@@ -17,3 +17,8 @@
 2. Select Add package from git url...
 3. Paste in this url: https://github.com/pwnedu/PackageHub.git
 4. Hit the 'Add' button.
+
+### Useage
+
+Add applications from the drop down menu. Tools/Custom Tools/Packages/Install
+Remove applications from the drop down menu. Tools/Custom Tools/Packages/Uninstall
