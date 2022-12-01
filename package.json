@@ -1,8 +1,8 @@
 {
   "name": "com.kiltec.pwneduhub",
-  "version": "0.0.2-preview.1",
+  "version": "0.0.3-preview.1",
   "displayName": "Package Hub by pwnedu",
-  "description": "Productivity tools for everyone",
+  "description": "A package manager for custom Unity Tools.\n\n* Project Setup\n* Custom Attributes\n* Custom Unity\n* My Notes\n* Script Editor",
   "unity": "2018.1",
   "documentationUrl": "https://github.com/pwnedu/PwneduHub/wiki",
   "licensesUrl": "https://github.com/pwnedu/PwneduHub/blob/main/LICENSE",
