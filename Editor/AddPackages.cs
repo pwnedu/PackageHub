@@ -23,7 +23,7 @@ namespace pwnedu.hub
             if (EditorUtility.DisplayDialog($"Add {Packages.setupToolName}", $"{_installText} {Packages.setupToolName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/SetupTool.git");
+                Request = Client.Add("https://github.com/pwnedu/ProjectSetup.git");
                 EditorApplication.update += Progress;
             }
         }
