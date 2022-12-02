@@ -2,7 +2,7 @@
 
 ## A Package Manager for Kiltec's Unity Tools
 
-### This will give access to manage the following packages from inside unity:
+### This will give access to manage the following packages from inside Unity:
 
 * [Project Setup](https://github.com/pwnedu/ProjectSetup) (Setup folders and templates) 
 * [Custom Attributes](https://github.com/pwnedu/CustomAttributes) (Custom Inspector) 
@@ -18,7 +18,14 @@
 3. Paste in this url: https://github.com/pwnedu/PackageHub.git
 4. Hit the 'Add' button.
 
-### Useage
+### Useage:
 
-Add applications from the drop down menu. Tools/Custom Tools/Packages/Install
-Remove applications from the drop down menu. Tools/Custom Tools/Packages/Uninstall
+#### Add a package
+
+1. Open the package installer located in the drop down menu. Tools/Packages/Install
+2. Select a package from the list and after confirming it will automatically be installed.
+
+#### Remove a package
+
+1. Open the package installer located in the drop down menu. Tools/Packages/Uninstall
+2. Select a package from the list and after confirming it will automatically be removed.
