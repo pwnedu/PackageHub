@@ -7,7 +7,7 @@ namespace pwnedu.hub
 {
     static class AddPackages
     {
-        const string _installMenu = "Tools/Custom Tools/Packages/Install/";
+        const string _installMenu = "Tools/Package Hub/Install/";
         const string _installText = "This will add";
         const string _forText = "for use in your project.\n\nProceed with install?";
 

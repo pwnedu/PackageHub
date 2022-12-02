@@ -17,3 +17,8 @@
 2. Select Add package from git url...
 3. Paste in this url: https://github.com/pwnedu/PackageHub.git
 4. Hit the 'Add' button.
+
+### Useage:
+
+1. Open the package installer located in the drop down menu. Tools/Packages/Install
+2. Select a package from the list and it will automatically install.

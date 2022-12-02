@@ -6,7 +6,7 @@ namespace pwnedu.hub
 {
     static class RemovePackages
     {
-        const string _removeMenu = "Tools/Custom Tools/Packages/Uninstall/";
+        const string _removeMenu = "Tools/Package Hub/Uninstall/";
         const string _removeText = "This will remove";
         const string _fromText = "from your project.\n\nAre you sure?";
         const string _confirmationText = "package removed!";
