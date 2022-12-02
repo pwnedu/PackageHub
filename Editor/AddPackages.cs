@@ -17,21 +17,21 @@ namespace pwnedu.hub
 
         #region ProjectSetup
 
-        [MenuItem(_installMenu + Packages.setupToolName)]
+        [MenuItem(_installMenu + Packages.projectSetupName)]
         static void AddSetupTools()
         {
-            if (EditorUtility.DisplayDialog($"Add {Packages.setupToolName}", $"{_installText} {Packages.setupToolName} {_forText}", "Continue", "Cancel"))
+            if (EditorUtility.DisplayDialog($"Add {Packages.projectSetupName}", $"{_installText} {Packages.projectSetupName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/ProjectSetup.git");
+                Request = Client.Add(Packages.projectSetupURL);
                 EditorApplication.update += Progress;
             }
         }
 
-        [MenuItem(_installMenu + Packages.setupToolName, validate = true)]
+        [MenuItem(_installMenu + Packages.projectSetupName, validate = true)]
         static bool AddSetupToolsValidate()
         {
-            if (ListPackages.IsPackageInstalled(Packages.setupToolPackage))
+            if (ListPackages.IsPackageInstalled(Packages.projectSetupPackage))
             {
                 //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
@@ -52,7 +52,7 @@ namespace pwnedu.hub
             if (EditorUtility.DisplayDialog($"Add {Packages.customAttributesName}", $"{_installText} {Packages.customAttributesName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/CustomAttributes.git");
+                Request = Client.Add(Packages.customAttributesURL);
                 EditorApplication.update += Progress;
             }
         }
@@ -73,6 +73,35 @@ namespace pwnedu.hub
 
         #endregion
 
+        #region CustomUnity
+
+        [MenuItem(_installMenu + Packages.customUnityName)]
+        static void AddProjectCustomisation()
+        {
+            if (EditorUtility.DisplayDialog($"Add {Packages.customUnityName}", $"{_installText} {Packages.customUnityName} {_forText}", "Continue", "Cancel"))
+            {
+                // Add a package to the project
+                Request = Client.Add(Packages.customUnityURL);
+                EditorApplication.update += Progress;
+            }
+        }
+
+        [MenuItem(_installMenu + Packages.customUnityName, validate = true)]
+        static bool AddProjectCustomisationValidate()
+        {
+            if (ListPackages.IsPackageInstalled(Packages.customUnityPackage))
+            {
+                //Debug.Log($"{Packages.setupToolName} not installed!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
         #region MyNotes
 
         [MenuItem(_installMenu + Packages.myNotesName)]
@@ -81,7 +110,7 @@ namespace pwnedu.hub
             if (EditorUtility.DisplayDialog($"Add {Packages.myNotesName}", $"{_installText} {Packages.myNotesName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/MyNotes.git");
+                Request = Client.Add(Packages.myNotesURL);
                 EditorApplication.update += Progress;
             }
         }
@@ -110,7 +139,7 @@ namespace pwnedu.hub
             if (EditorUtility.DisplayDialog($"Add {Packages.scriptEditorName}", $"{_installText} {Packages.scriptEditorName} {_forText}", "Continue", "Cancel"))
             {
                 // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/ScriptEditor.git");
+                Request = Client.Add(Packages.scriptEditorURL);
                 EditorApplication.update += Progress;
             }
         }
@@ -119,35 +148,6 @@ namespace pwnedu.hub
         static bool AdScriptEditorValidate()
         {
             if (ListPackages.IsPackageInstalled(Packages.scriptEditorPackage))
-            {
-                //Debug.Log($"{Packages.setupToolName} not installed!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        #endregion
-
-        #region ProjectCustomiser
-
-        [MenuItem(_installMenu + Packages.projectCustomisationName)]
-        static void AddProjectCustomisation()
-        {
-            if (EditorUtility.DisplayDialog($"Add {Packages.projectCustomisationName}", $"{_installText} {Packages.projectCustomisationName} {_forText}", "Continue", "Cancel"))
-            {
-                // Add a package to the project
-                Request = Client.Add("https://github.com/pwnedu/ProjectCustomisation.git");
-                EditorApplication.update += Progress;
-            }
-        }
-        
-        [MenuItem(_installMenu + Packages.projectCustomisationName, validate = true)]
-        static bool AddProjectCustomisationValidate()
-        {
-            if (ListPackages.IsPackageInstalled(Packages.projectCustomisationPackage))
             {
                 //Debug.Log($"{Packages.setupToolName} not installed!");
                 return false;
