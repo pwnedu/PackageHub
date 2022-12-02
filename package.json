@@ -4,6 +4,7 @@
   "displayName": "Package Hub by pwnedu",
   "description": "A package manager for Kiltec's custom Unity Tools.\n\nAvailable Tools:\n\n* Project Setup (Folders and Templates)\n* Custom Attributes (Inspector)\n* Custom Unity (Console, Hierarchy, Project View)\n* My Notes\n* Script Editor",
   "unity": "2018.1",
+  "changelogUrl": "https://github.com/pwnedu/PackageHub/blob/main/CHANGELOG.md",
   "documentationUrl": "https://github.com/pwnedu/PackageHub/wiki",
   "licensesUrl": "https://github.com/pwnedu/PackageHub/blob/main/LICENSE.md",
   "keywords": [
