@@ -1,5 +1,5 @@
 ---
-Description: This neat little package installer allows you to selectively choose to install all the components you have come to know and love from the Unity Tools package via github. Plus includes additional packages like the script editing window, easy project setup configuration and script templates.
+Description: This lightweight package installer allows you to selectively choose to install all the components you have come to know and love from the Unity Tools package via github. Plus includes additional packages like the script editing window, easy project setup, configuration and templates.
 ---
 
 # PwneduHub
